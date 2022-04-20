@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 			id: item.id,
 			title: item.properties.title,
 			magnitude: item.properties.mag,
-			time: moment(new Date(item.properties.time)).format("lll"),
+			time: item.properties.time,
 		});
 	});
 	return {
