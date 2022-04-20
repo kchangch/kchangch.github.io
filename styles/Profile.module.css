@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gridContainer {
+    margin-left: 20px;
+    display: grid;
+    max-width: 450px;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.title {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.text {
+    font-weight: 600;
+    color: #777777;
+    line-height: 1.5;
+}
