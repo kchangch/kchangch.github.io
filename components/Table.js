@@ -3,11 +3,16 @@ import { useState } from "react";
 import moment from "moment";
 
 const Table = ({ tableHeader, locations }) => {
-	console.log(locations);
-
 	const [data, setData] = useState(locations);
 	const [order, setOrder] = useState("ASC");
 
+	/**
+	 * Function to compare 2 elements and sort them
+	 * @param {Item 1} a
+	 * @param {Item 2} b
+	 * @param {Sort Key} orderBy
+	 * @returns {number}
+	 */
 	const descendingComparator = (a, b, orderBy) => {
 		let aIndex = 0;
 		let bIndex = 0;
@@ -38,6 +43,10 @@ const Table = ({ tableHeader, locations }) => {
 		return aIndex < aString.length ? -1 : 1;
 	};
 
+	/**
+	 * Function to determine if sorting is ascending or descending
+	 * @param {Column to be sorted} sortKey
+	 */
 	const sortColumn = (sortKey) => {
 		if (order === "ASC") {
 			const sorted = [...data].sort((a, b) =>
