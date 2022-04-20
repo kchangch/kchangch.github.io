@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import moment from "moment";
 
 const Table = ({ tableHeader, locations }) => {
 	console.log(locations);
@@ -81,6 +82,10 @@ const Table = ({ tableHeader, locations }) => {
 										<Link href={"/" + item.id}>
 											<a>{item[header]}</a>
 										</Link>
+									</td>
+								) : header === "time" ? (
+									<td key={headerIdx} align="left">
+										<a>{moment(new Date(item[header])).format("lll")}</a>
 									</td>
 								) : (
 									<td key={headerIdx} align="left">
