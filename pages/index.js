@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import data from "../data.json";
 import Table from "../components/Table";
-import moment from "moment";
 
 export const getStaticProps = async () => {
 	const dataTitle = data.data.metadata.title;
