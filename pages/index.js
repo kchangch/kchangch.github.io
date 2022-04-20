@@ -13,7 +13,6 @@ export const getStaticProps = async () => {
 			title: item.properties.title,
 			magnitude: item.properties.mag,
 			time: moment(new Date(item.properties.time)).format("lll"),
-			unixTime: item.properties.time,
 		});
 	});
 	return {
