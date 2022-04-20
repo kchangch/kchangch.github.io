@@ -19,8 +19,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+      - name: Install dependencies
+        run: cd kchangch.github.io && npm ci --ignore-scripts
       - name: Install packages
-        run: npm install
+        run: npm ci
       - name: Build project
         run: npm run build
       - name: Export static files
