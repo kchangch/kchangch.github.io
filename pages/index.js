@@ -21,9 +21,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ title, locations }) {
-	const tableHeader = Object.keys(locations[0]).filter(
-		(item) => item !== "id" && item !== "unixTime"
-	);
+	const tableHeader = Object.keys(locations[0]).filter((item) => item !== "id");
 
 	return (
 		<>
