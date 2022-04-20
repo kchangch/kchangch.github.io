@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Table = ({ tableHeader, locations }) => {
+	console.log(locations);
+
 	const [data, setData] = useState(locations);
 	const [order, setOrder] = useState("ASC");
 
